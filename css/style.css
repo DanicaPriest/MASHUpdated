@@ -24,7 +24,7 @@
 	background-image: url(https://lh3.googleusercontent.com/k9fGurSqj8b-RHRZ2WsOQ6mR4Z72hDxovOzQ2dYJH_IQauIaKoRAFXt3XjurPg-wOv1C0dZJWJN4anHJo1VZOogsDgyGEe0mkGwPi8ffNScWADD3Lu1tEPm-oN9F5miTrsHYMETYdkoKML6H4yXa7vV7GVxjIJW8IRAkfpynPkFjBZHQjR4SInDC9suE7DswVDMgIVkvMqGtTmluaZaZKP07S_k8QxmpADGgYyL5KK8DOIdrYXqDvBEH8gzuUhn6q3v3aM-vc9F0-vQdkbGcxH3TvBwdvwhb-eRWMZQ1tBZ-m8g30RvVnFF7R00O-KbUo22y2Tu_nPsVdlFMDVntUnZ71i2fMnF33D-or3_7-TXlC2PG-1plrXgz8fpiUi-J73zo-xhCAQb_8648OmBP2ZvlIfWoY5BTa5NdjobXi5tLOSg43lDFePS48B4Eda7VtHcAwp8eCgBwz31sGhBsesfEwFuy4mmevg3pqog4zID7QCidIPayzVB8C7FEFcZEoaXKK_Sl5IgMRQVPgP_HjoWUJW8JDklGCuHBOSPcoROoheW9pGZSRoIQANGD1xfWZxSo1OEbpwQkqR3RKAqRQvMTI69ztcHLhm9orC1w=w256-h332-no);
 background-size:cover;
 font-size:20px;
-text-shadow: -5px -4px 10px white, 5px 4px 10px white ;
+text-shadow: -2px -1px 10px white, 2px 1px 10px white ;
 padding:10px;
 border: 3px outset;
 color:black;
@@ -64,6 +64,7 @@ font-weight:Bold;
 	}
 	#mash_title{
 	font-size:40px;
+	text-align:center;
 	}
 	#changebackground{
 	float:right;

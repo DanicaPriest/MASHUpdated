@@ -66,16 +66,16 @@ function player_selection(){
 			
 			 job_choice1 = document.getElementById("jc1").value;
 			 jc_list = document.getElementsByTagName("OL")[2];
-			 jc_list.getElementsByTagName("LI")[0].innerHTML = job_choice1;
+			 jc_list.getElementsByTagName("LI")[0].getElementsByTagName("span")[0].innerHTML = job_choice1;
 			 
 			job_choice2 = document.getElementById("jc2").value;
-			jc_list.getElementsByTagName("LI")[1].innerHTML = job_choice2;
+			jc_list.getElementsByTagName("LI")[1].getElementsByTagName("span")[0].innerHTML = job_choice2;
 			
 			 job_choice3 = document.getElementById("jc3").value;
-			 jc_list.getElementsByTagName("LI")[2].innerHTML = job_choice3;
+			 jc_list.getElementsByTagName("LI")[2].getElementsByTagName("span")[0].innerHTML = job_choice3;
 					
 			 job_choice4 = document.getElementById("jc4").value;
-			jc_list.getElementsByTagName("LI")[3].innerHTML = job_choice4;
+			jc_list.getElementsByTagName("LI")[3].getElementsByTagName("span")[0].innerHTML = job_choice4;
 
 
  
@@ -84,16 +84,16 @@ function player_selection(){
 			
 			 car_choice1 = document.getElementById("cc1").value;
 					cc_list = document.getElementsByTagName("OL")[3];
-					cc_list.getElementsByTagName("LI")[0].innerHTML = car_choice1;
+					cc_list.getElementsByTagName("LI")[0].getElementsByTagName("span")[0].innerHTML = car_choice1;
 					
 			 car_choice2 = document.getElementById("cc2").value;
-					cc_list.getElementsByTagName("LI")[1].innerHTML = car_choice2;
+					cc_list.getElementsByTagName("LI")[1].getElementsByTagName("span")[0].innerHTML = car_choice2;
 					
 			car_choice3 = document.getElementById("cc3").value;
-			cc_list.getElementsByTagName("LI")[2].innerHTML = car_choice3;
+			cc_list.getElementsByTagName("LI")[2].getElementsByTagName("span")[0].innerHTML = car_choice3;
 			
 			 car_choice4 = document.getElementById("cc4").value;
-			cc_list.getElementsByTagName("LI")[3].innerHTML = car_choice4;
+			cc_list.getElementsByTagName("LI")[3].getElementsByTagName("span")[0].innerHTML = car_choice4;
 
 
 
@@ -102,16 +102,16 @@ function player_selection(){
 			
 			 money_choice1 = document.getElementById("mc1").value;
 				mc_list = document.getElementsByTagName("OL")[4];
-					mc_list.getElementsByTagName("LI")[0].innerHTML = money_choice1;
+					mc_list.getElementsByTagName("LI")[0].getElementsByTagName("span")[0].innerHTML = money_choice1;
 					
 			 money_choice2 =  document.getElementById("mc2").value;
-				mc_list.getElementsByTagName("LI")[1].innerHTML = money_choice2;
+				mc_list.getElementsByTagName("LI")[1].getElementsByTagName("span")[0].innerHTML = money_choice2;
 				
 			 money_choice3 =  document.getElementById("mc3").value;
-			mc_list.getElementsByTagName("LI")[2].innerHTML = money_choice3;
+			mc_list.getElementsByTagName("LI")[2].getElementsByTagName("span")[0].innerHTML = money_choice3;
 			
 			money_choice4 =  document.getElementById("mc4").value;
-			mc_list.getElementsByTagName("LI")[3].innerHTML = money_choice4;
+			mc_list.getElementsByTagName("LI")[3].getElementsByTagName("span")[0].innerHTML = money_choice4;
 
  
 		
@@ -119,16 +119,16 @@ function player_selection(){
 			
 			 pet_choice1 = document.getElementById("pc1").value;
 				pc_list = document.getElementsByTagName("OL")[5];
-					pc_list.getElementsByTagName("LI")[0].innerHTML = pet_choice1
+					pc_list.getElementsByTagName("LI")[0].getElementsByTagName("span")[0].innerHTML = pet_choice1
 					
 			pet_choice2 = document.getElementById("pc2").value;
-				pc_list.getElementsByTagName("LI")[1].innerHTML = pet_choice2;
+				pc_list.getElementsByTagName("LI")[1].getElementsByTagName("span")[0].innerHTML = pet_choice2;
 				
 			pet_choice3 = document.getElementById("pc3").value;
-				pc_list.getElementsByTagName("LI")[2].innerHTML = pet_choice3;
+				pc_list.getElementsByTagName("LI")[2].getElementsByTagName("span")[0].innerHTML = pet_choice3;
 				
 			pet_choice4 = document.getElementById("pc4").value;
-			pc_list.getElementsByTagName("LI")[3].innerHTML = pet_choice4;
+			pc_list.getElementsByTagName("LI")[3].getElementsByTagName("span")[0].innerHTML = pet_choice4;
 
  
         
@@ -136,37 +136,42 @@ function player_selection(){
 			
 			 place_choice1 = document.getElementById("plc1").value;
 				plc_list = document.getElementsByTagName("OL")[6];
-					plc_list.getElementsByTagName("LI")[0].innerHTML = place_choice1;
+					plc_list.getElementsByTagName("LI")[0].getElementsByTagName("span")[0].innerHTML = place_choice1;
 					
 			 place_choice2 = document.getElementById("plc2").value;
-				plc_list.getElementsByTagName("LI")[1].innerHTML = place_choice2;
+				plc_list.getElementsByTagName("LI")[1].getElementsByTagName("span")[0].innerHTML = place_choice2;
 				
 			 place_choice3 = document.getElementById("plc3").value;
-			plc_list.getElementsByTagName("LI")[2].innerHTML = place_choice3;
+			plc_list.getElementsByTagName("LI")[2].getElementsByTagName("span")[0].innerHTML = place_choice3;
 			
 			 place_choice4 = document.getElementById("plc4").value;
-			plc_list.getElementsByTagName("LI")[3].innerHTML = place_choice4;
+			plc_list.getElementsByTagName("LI")[3].getElementsByTagName("span")[0].innerHTML = place_choice4;
 
 
 	 
  
 		
 }
-//MASH result calculation   
-
-		function mash_results(){
-			if (!started){
-			player_selection();
-			
-			}
-		
   //clear background of yellow highlights
+  function clear_background(){
   var xx = document.querySelectorAll("LI");
   
 
 for (var i = 0; i < xx.length; i++) {
     xx[i].style.backgroundColor="transparent";
 }
+  }
+  
+//MASH result calculation   
+
+		function mash_results(){
+			clear_background();
+			if (!started){
+			player_selection();
+			
+			}
+		
+
 //display MASH text
   document.getElementById("mash_house").style.display = "inline-block";
   
@@ -237,11 +242,31 @@ for (var i = 0; i < inputs.length; i++) {
     inputs[i].style.display="none";
 }
 }
+//restarts and resets game
 function reset_game(){
 	start_mash();
+	clear_background();
+	document.getElementById("futurebutton").innerHTML = "Calculate Future!";
+	document.getElementById("mash_house").style.display = "none";
 	
+	//unhide inputs and clear values
+	for (var i = 0; i < inputs.length; i++) {
+    inputs[i].style.display="inline-block";
+	inputs[i].value = " ";}
 	
+	//clear past choices
+	 var sp = document.querySelectorAll("SPAN");
+  
+
+for (var i = 0; i < sp.length; i++) {
+    sp[i].innerHTML=" ";
 }
+//started is false so player_selection() will be activated
+	started = false;
+}
+	
+	
+
 function change_background(){
 
  var pageimage = document.getElementsByTagName("body")[0];

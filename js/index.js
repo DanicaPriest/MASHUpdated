@@ -25,14 +25,15 @@
 		var place_choice3;
 		var place_choice4;
 		var started = false;
-		var inputs = document.querySelectorAll("INPUT"); 
+		var inputs = document.querySelectorAll("INPUT");
+        var divs =  document.querySelectorAll("DIV");
 		
 		function start_mash() {
 		
 			var player_name = prompt("Please enter your name");
 			if (player_name != null) {
 			document.getElementById("mash_title").innerHTML =
-			player_name + "'s MASH";}
+			player_name + "'s M.A.S.H.";}
 		}
 		
 
@@ -174,6 +175,10 @@ for (var i = 0; i < xx.length; i++) {
 
 //display MASH text
   document.getElementById("mash_house").style.display = "inline-block";
+  //change div width
+  for (i = 0; i <divs.length; i++){
+	  divs[i].style.width = "24%";
+  }
   
 		alert("Your future is...(imagine a drumroll or tense gameshow music then press ok)");
 		
@@ -242,6 +247,7 @@ for (var i = 0; i < inputs.length; i++) {
     inputs[i].style.display="none";
 }
 }
+
 //restarts and resets game
 function reset_game(){
 	start_mash();
@@ -253,6 +259,11 @@ function reset_game(){
 	for (var i = 0; i < inputs.length; i++) {
     inputs[i].style.display="inline-block";
 	inputs[i].value = " ";}
+	
+	//change div width back
+	for (i = 0; i <divs.length; i++){
+	  divs[i].style.width = "30%";
+  }
 	
 	//clear past choices
 	 var sp = document.querySelectorAll("SPAN");

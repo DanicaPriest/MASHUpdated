@@ -1,2 +1,2 @@
 # Mash
-wip updating simple mash game
+work in progress updating simple mash game

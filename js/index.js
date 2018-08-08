@@ -283,7 +283,9 @@ function carText(id){
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var car = JSON.parse(this.responseText);
-        document.getElementById(id).innerHTML = car[1].word;
+		var num = Math.floor((Math.random() * car.length));
+        document.getElementById(id).placeholder = car[num].word;
+		
     }
 };
 xmlhttp.open("GET", "https://api.datamuse.com/words?rel_gen=car", true);

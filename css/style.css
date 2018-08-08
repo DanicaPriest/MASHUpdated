@@ -49,6 +49,14 @@ font-family: 'Schoolbell', cursive;
 	text-shadow:  -2px -1px 2px black, 2px 1px 2px black ;
 	
 	}
+	
+	.random{
+		font-size:14px;
+		background:pink;
+		margin:5px;
+		padding:1px;
+		
+	}
 	#marriagetext,#occupationtext, #transportationtext,#moneytext,#petstext, #placestext{
 		display:inline-block;
 	}

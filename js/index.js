@@ -275,7 +275,26 @@ for (var i = 0; i < sp.length; i++) {
 //started is false so player_selection() will be activated
 	started = false;
 }
+
+
+//get a random car from the api and assign it to the input
+function carText(id){
+	var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+        var car = JSON.parse(this.responseText);
+        document.getElementById(id).innerHTML = car[1].word;
+    }
+};
+xmlhttp.open("GET", "https://api.datamuse.com/words?rel_gen=car", true);
+xmlhttp.send();
+	 
 	
+   
+	
+	
+}
+
 	
 
 function change_background(){

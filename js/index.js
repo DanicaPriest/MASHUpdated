@@ -27,6 +27,7 @@
 		var started = false;
 		var inputs = document.querySelectorAll("INPUT");
         var divs =  document.querySelectorAll("DIV");
+		var rButtons =  document.querySelectorAll(".random");
 		
 		function start_mash() {
 		
@@ -155,10 +156,10 @@ function player_selection(){
 }
   //clear background of yellow highlights
   function clear_background(){
+	  
   var xx = document.querySelectorAll("LI");
-  
 
-for (var i = 0; i < xx.length; i++) {
+	for (var i = 0; i < xx.length; i++) {
     xx[i].style.backgroundColor="transparent";
 }
   }
@@ -246,6 +247,9 @@ started = true;
 for (var i = 0; i < inputs.length; i++) {
     inputs[i].style.display="none";
 }
+for (var i = 0; i < rButtons.length; i++) {
+    rButtons[i].style.display="none";
+}
 }
 
 //restarts and resets game
@@ -259,6 +263,9 @@ function reset_game(){
 	for (var i = 0; i < inputs.length; i++) {
     inputs[i].style.display="inline-block";
 	inputs[i].value = " ";}
+	for (var i = 0; i < rButtons.length; i++) {
+    rButtons[i].style.display="inline-block";
+}
 	
 	//change div width back
 	for (i = 0; i <divs.length; i++){
@@ -284,7 +291,7 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
         var car = JSON.parse(this.responseText);
 		var num = Math.floor((Math.random() * car.length));
-        document.getElementById(id).placeholder = car[num].word;
+		document.getElementById(id).value = car[num].word;
 		
     }
 };

@@ -283,19 +283,18 @@ for (var i = 0; i < sp.length; i++) {
 	started = false;
 }
 
-
-//get a random car from the api and assign it to the input
-function carText(id){
+//generate a random name 
+function randomName(id){
 	var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
-        var car = JSON.parse(this.responseText);
-		var num = Math.floor((Math.random() * car.length));
-		document.getElementById(id).value = car[num].word;
+		
+        var person = JSON.parse(this.responseText);
+		document.getElementById(id).value = person[0].name;// + " " + person[0].surname + " from " + person[0].region;
 		
     }
 };
-xmlhttp.open("GET", "https://api.datamuse.com/words?rel_gen=car", true);
+xmlhttp.open("GET", "https://uinames.com/api/");
 xmlhttp.send();
 	 
 	
@@ -304,6 +303,31 @@ xmlhttp.send();
 	
 }
 
+//get a random word from the datamuse api and assign it to the input
+function randomText(id, url){
+	var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		
+        var rwords = JSON.parse(this.responseText);
+		var num = Math.floor((Math.random() * rwords.length));
+		document.getElementById(id).value = rwords[num].word;
+		
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+	 
+	
+   
+	
+	
+}
+//get a random number for salary
+function randomSal(id){
+	var num = Math.floor((Math.random() * 1000000));
+		document.getElementById(id).value = num;
+}
 	
 
 function change_background(){

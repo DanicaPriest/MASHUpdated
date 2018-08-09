@@ -290,11 +290,11 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 		
         var person = JSON.parse(this.responseText);
-		document.getElementById(id).value = person[0].name;// + " " + person[0].surname + " from " + person[0].region;
+		document.getElementById(id).value = person.name + " " + person.surname + " from " + person.region;
 		
     }
 };
-xmlhttp.open("GET", "https://uinames.com/api/");
+xmlhttp.open("GET", "https://uinames.com/api/", true);
 xmlhttp.send();
 	 
 	

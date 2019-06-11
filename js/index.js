@@ -296,10 +296,24 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "https://uinames.com/api/", true);
 xmlhttp.send();
-	 
 	
-   
 	
+}
+//generate a random car 
+function randomCar(id){
+	var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		
+        var carList = JSON.parse(this.responseText);
+		var num = Math.floor((Math.random() * carList.Results.length));
+		
+		document.getElementById(id).value = carList.Results[num].Mfr_CommonName;
+		
+    }
+};
+xmlhttp.open("GET", "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json", true);
+xmlhttp.send();
 	
 }
 

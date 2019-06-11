@@ -1,5 +1,4 @@
-      
-		//global variables
+//global variables
 		var love_choice1;
 		var love_choice2;
 		var love_choice3;
@@ -296,6 +295,9 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "https://uinames.com/api/", true);
 xmlhttp.send();
+	 
+	
+   
 	
 	
 }
@@ -314,6 +316,10 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json", true);
 xmlhttp.send();
+	 
+	
+   
+	
 	
 }
 //generate a random Pet 
@@ -335,6 +341,12 @@ xmlhttp.onreadystatechange = function() {
 };
 xmlhttp.open("GET", "https://cors.io/?api.petfinder.com/breed.list?key=9bce8b750600914be2415a1932012ee0&animal=" + petType, true);
 xmlhttp.send();
+	 
+	
+   
+	
+	
+}
 
 //get a random word from the datamuse api and assign it to the input
 function randomText(id, url){

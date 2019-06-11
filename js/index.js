@@ -339,7 +339,7 @@ xmlhttp.onreadystatechange = function() {
 		
     }
 };
-xmlhttp.open("GET", "https://cors.io/?api.petfinder.com/breed.list?key=9bce8b750600914be2415a1932012ee0&animal=" + petType, true);
+xmlhttp.open("GET", "https://cors.io/?https://api.petfinder.com/breed.list?key=9bce8b750600914be2415a1932012ee0&animal=" + petType, true);
 xmlhttp.send();
 	 
 	

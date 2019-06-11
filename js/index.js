@@ -316,6 +316,25 @@ xmlhttp.open("GET", "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers
 xmlhttp.send();
 	
 }
+//generate a random Pet 
+function randomPet(id){
+	var xmlhttp = new XMLHttpRequest();
+	var animals = ["barnyard", "bird", "cat", "dog", "horse", "reptile", "smallfurry", "rabbit"];
+	var num = Math.floor((Math.random() * animals.length));
+		var petType = animals[num];
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		
+        var petList = JSON.parse(this.responseText);
+		var pet = petList.petfinder.breed.breeds;
+		var num2 = Math.floor((Math.random() * pet.length));
+		
+		document.getElementById(id).value = pet[num2].$t + " (" + petType + ")" ;
+		
+    }
+};
+xmlhttp.open("GET", "https://cors.io/?api.petfinder.com/breed.list?key=9bce8b750600914be2415a1932012ee0&animal=" + petType, true);
+xmlhttp.send();
 
 //get a random word from the datamuse api and assign it to the input
 function randomText(id, url){

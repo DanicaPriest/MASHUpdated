@@ -294,13 +294,26 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", "https://uinames.com/api/", true);
-xmlhttp.send();
-	 
-	
-   
-	
-	
+xmlhttp.send();	
 }
+
+//get a random Occupation
+function randomJob(id){
+	var xmlhttp = new XMLHttpRequest();
+xmlhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+		
+        var mainList = JSON.parse(this.responseText);
+		var num = Math.floor((Math.random() * mainList.occupation_data.length));
+		var num2 = Math.floor((Math.random() * mainList.occupation_data[num].occupations.length));
+		document.getElementById(id).value = mainList.occupation_data[num].occupations[num2].title;
+		
+    }
+};
+xmlhttp.open("GET", "https://cors.io/?http://api.cteresource.org/occupations", true);
+xmlhttp.send();	
+}
+
 //generate a random car 
 function randomCar(id){
 	var xmlhttp = new XMLHttpRequest();
@@ -315,13 +328,9 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json", true);
-xmlhttp.send();
-	 
-	
-   
-	
-	
+xmlhttp.send();	
 }
+
 //generate a random Pet 
 function randomPet(id){
 	var xmlhttp = new XMLHttpRequest();
@@ -340,12 +349,7 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", "https://cors.io/?https://api.petfinder.com/breed.list?key=9bce8b750600914be2415a1932012ee0&format=json&animal=" + petType, true);
-xmlhttp.send();
-	 
-	
-   
-	
-	
+xmlhttp.send();	
 }
 
 //get a random word from the datamuse api and assign it to the input
@@ -361,13 +365,9 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", url, true);
-xmlhttp.send();
-	 
-	
-   
-	
-	
+xmlhttp.send();	
 }
+
 //get a random number for salary
 function randomSal(id){
 	var num = Math.floor((Math.random() * 1000000));

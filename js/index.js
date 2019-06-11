@@ -332,7 +332,7 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 		
         var petList = JSON.parse(this.responseText);
-		var pet = petList.petfinder.breed.breeds;
+		var pet = petList.petfinder.breeds.breed;
 		var num2 = Math.floor((Math.random() * pet.length));
 		
 		document.getElementById(id).value = pet[num2].$t + " (" + petType + ")" ;

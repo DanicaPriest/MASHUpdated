@@ -371,7 +371,7 @@ xmlhttp.send();
 //get a random number for salary
 function randomSal(id){
 	var num = Math.floor((Math.random() * 1000000));
-		document.getElementById(id).value = num;
+		document.getElementById(id).value = num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 	
 

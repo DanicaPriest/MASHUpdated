@@ -278,7 +278,7 @@ function reset_game(){
   
 
 for (var i = 0; i < sp.length; i++) {
-    sp[i].value="";
+    sp[i].value=" ";
 }
 //started is false so player_selection() will be activated
 	started = false;

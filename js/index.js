@@ -34,6 +34,8 @@
 			if (player_name.length > 0) {
 			document.getElementById("mash_title").innerHTML =
 			player_name + "'s M.A.S.H.";}
+			
+			
 		}
 		
 
@@ -276,7 +278,7 @@ function reset_game(){
   
 
 for (var i = 0; i < sp.length; i++) {
-    sp[i].innerHTML=" ";
+    sp[i].value="";
 }
 //started is false so player_selection() will be activated
 	started = false;
@@ -284,6 +286,8 @@ for (var i = 0; i < sp.length; i++) {
 
 //generate a random name 
 function randomName(id){
+	//placeholder text to show api is still loading
+	document.getElementById(id).placeholder = "Loading...";
 	var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -299,6 +303,8 @@ xmlhttp.send();
 
 //get a random Occupation
 function randomJob(id){
+	//placeholder text to show api is still loading
+	document.getElementById(id).placeholder = "Loading...";
 	var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -316,6 +322,8 @@ xmlhttp.send();
 
 //generate a random car 
 function randomCar(id){
+	//placeholder text to show api is still loading
+	document.getElementById(id).placeholder = "Loading...";
 	var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -328,11 +336,17 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", "https://vpic.nhtsa.dot.gov/api/vehicles/getallmanufacturers?format=json", true);
-xmlhttp.send();	
+xmlhttp.send();
+	 
+	
+   
+	
+	
 }
-
 //generate a random Pet 
 function randomPet(id){
+	//placeholder text to show api is still loading
+	document.getElementById(id).placeholder = "Loading...";
 	var xmlhttp = new XMLHttpRequest();
 	var animals = ["barnyard", "bird", "cat", "dog", "horse", "reptile", "smallfurry", "rabbit"];
 	var num = Math.floor((Math.random() * animals.length));
@@ -341,6 +355,7 @@ xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 		
         var petList = JSON.parse(this.responseText);
+		
 		var pet = petList.petfinder.breeds.breed;
 		var num2 = Math.floor((Math.random() * pet.length));
 		
@@ -349,7 +364,12 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", "https://cors.io/?https://api.petfinder.com/breed.list?key=9bce8b750600914be2415a1932012ee0&format=json&animal=" + petType, true);
-xmlhttp.send();	
+xmlhttp.send();
+	 
+	
+   
+	
+	
 }
 
 //get a random word from the datamuse api and assign it to the input
@@ -365,9 +385,13 @@ xmlhttp.onreadystatechange = function() {
     }
 };
 xmlhttp.open("GET", url, true);
-xmlhttp.send();	
+xmlhttp.send();
+	 
+	
+   
+	
+	
 }
-
 //get a random number for salary
 function randomSal(id){
 	var num = Math.floor((Math.random() * 1000000));

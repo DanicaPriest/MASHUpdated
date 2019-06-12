@@ -31,7 +31,7 @@
 		function start_mash() {
 		
 			var player_name = prompt("Please enter your name");
-			if (player_name != null) {
+			if (player_name.length > 0) {
 			document.getElementById("mash_title").innerHTML =
 			player_name + "'s M.A.S.H.";}
 		}

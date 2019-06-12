@@ -24,9 +24,11 @@
 		var place_choice3;
 		var place_choice4;
 		var started = false;
+		var restarted = false;
 		var inputs = document.querySelectorAll("INPUT");
         var divs =  document.querySelectorAll("DIV");
 		var rButtons =  document.querySelectorAll(".random");
+		var sp = document.querySelectorAll("SPAN");
 		
 		function start_mash() {
 		
@@ -173,7 +175,12 @@ function player_selection(){
 			player_selection();
 			
 			}
-		
+		if (restarted){
+			for (var i = 0; i < sp.length; i++) {
+				sp[i].style.display="inline-block";
+				
+		}
+		}
 
 //display MASH text
   document.getElementById("mash_house").style.display = "inline-block";
@@ -255,6 +262,7 @@ for (var i = 0; i < rButtons.length; i++) {
 
 //restarts and resets game
 function reset_game(){
+	restarted = true;
 	start_mash();
 	clear_background();
 	document.getElementById("futurebutton").innerHTML = "Calculate Future!";
@@ -263,7 +271,7 @@ function reset_game(){
 	//unhide inputs and clear values
 	for (var i = 0; i < inputs.length; i++) {
     inputs[i].style.display="inline-block";
-	inputs[i].value = " ";}
+	inputs[i].value = "";}
 	for (var i = 0; i < rButtons.length; i++) {
     rButtons[i].style.display="inline-block";
 }
@@ -274,11 +282,11 @@ function reset_game(){
   }
 	
 	//clear past choices
-	 var sp = document.querySelectorAll("SPAN");
   
 
 for (var i = 0; i < sp.length; i++) {
-    sp[i].value=" ";
+    sp[i].value="";
+	sp[i].style.display="none";
 }
 //started is false so player_selection() will be activated
 	started = false;

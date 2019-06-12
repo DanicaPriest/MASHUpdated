@@ -271,7 +271,9 @@ function reset_game(){
 	//unhide inputs and clear values
 	for (var i = 0; i < inputs.length; i++) {
     inputs[i].style.display="inline-block";
-	inputs[i].value = "";}
+	inputs[i].value = "";
+	inputs[i].placeholder= "Type here or pick a random entry";
+	}
 	for (var i = 0; i < rButtons.length; i++) {
     rButtons[i].style.display="inline-block";
 }

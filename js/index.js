@@ -382,26 +382,21 @@ xmlhttp.send();
 	
 }
 
-//get a random word from the datamuse api and assign it to the input
-function randomText(id, url){
+//get a random country
+function randomPlace(id){
 	var xmlhttp = new XMLHttpRequest();
 xmlhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 		
-        var rwords = JSON.parse(this.responseText);
-		var num = Math.floor((Math.random() * rwords.length));
-		document.getElementById(id).value = rwords[num].word;
-		
+        var cList = JSON.parse(this.responseText);
+		var num = Math.floor((Math.random() * cList.length));
+		document.getElementById(id).value = cList[num].name;		
     }
 };
-xmlhttp.open("GET", url, true);
+xmlhttp.open("GET", "https://restcountries.eu/rest/v2/all", true);
 xmlhttp.send();
-	 
-	
-   
-	
-	
 }
+
 //get a random number for salary
 function randomSal(id){
 	var num = Math.floor((Math.random() * 1000000));

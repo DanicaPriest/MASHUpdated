@@ -7,5 +7,8 @@ APIs used: <br>
 PetFinder https://www.petfinder.com/developers/ <br>
 Rest Countries https://restcountries.eu/ <br>
 National Highway Traffic Safety Administration https://vpic.nhtsa.dot.gov/api/ <br>
+Virginia Dept of Education Career Resource http://api.cteresource.org/docs br>
+UI Names https://uinames.com/api/ <br>
+
 
 *if you have an ad blocker on your browser some api's (and random button used to access them) may not work. Try pausing the ad blocker then refresh the page.

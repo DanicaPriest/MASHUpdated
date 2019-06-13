@@ -3,9 +3,9 @@ This is an online version of the fortune telling children's game MASH. Mash stan
 
 You can play the game at https://mash-future-telling-game.herokuapp.com/
 
-APIs used:
-PetFinder https://www.petfinder.com/developers/
-Rest Countries https://restcountries.eu/
-National Highway Traffic Safety Administration https://vpic.nhtsa.dot.gov/api/
+APIs used: <br>
+PetFinder https://www.petfinder.com/developers/ <br>
+Rest Countries https://restcountries.eu/ <br>
+National Highway Traffic Safety Administration https://vpic.nhtsa.dot.gov/api/ <br>
 
 *if you have an ad blocker on your browser some api's (and random button used to access them) may not work. Try pausing the ad blocker then refresh the page.
